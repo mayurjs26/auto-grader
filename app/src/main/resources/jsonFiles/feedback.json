@@ -1,0 +1,20 @@
+[
+
+	{
+		"message" : "Some text 1",
+		"parameters" : ["console", "output"]
+		"condition" : "console.includes('error') && !output.includes('some id')" 
+	
+	},
+	{
+		"message" : "Some text 2",
+		"condition" : "console.includes('error') && maxMem > 2048" 
+	
+	},
+	{
+		"message" : "Some text 3",
+		"condition" : "console.includes('error') && !output.includes('some id') && maxMem > 2048" 
+	
+	}
+
+]

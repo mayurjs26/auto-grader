@@ -1,0 +1,120 @@
+{
+	"outputFormat" : "database",
+	"runWaitInTime" : 5,
+
+	"tests" : {
+	
+		testCase1 : {
+			"waitInTime" : 5,
+			"penalty" : 10,
+			"before" : {},
+			"after" : {},
+			"inputQuery" : "select id, ptitle, adult, year, runtime, rating, totalVotes from movies where ",
+			"cases" : [
+			{
+				"input" : {
+					"id" : 78748,
+					"adult" : false
+				},
+				"output" : {
+					"id" : 78748,
+					"ptitle" : "Alien",
+					"adult" : false,
+					"year" : 1979,
+					"runtime" : 117,
+					"rating" : 8.4,
+					"totalVotes" : 113998
+				},
+
+			},
+			{
+				"input" : {
+					"id" : 78748
+				},
+				"output" : {
+					"id" : 78748,
+					"ptitle" : "Alien",
+					"adult" : false,
+					"year" : 1979,
+					"runtime" : 117,
+					"rating" : 8.4,
+					"totalVotes" : 113998
+				},
+
+			}
+
+			]
+
+		},
+
+		testCase2 : {
+			"waitInTime" : 5,
+			"penalty" : 10,
+			"before" : {},
+			"after" : {},
+			"inputQuery" : "select count(*) as cnt from Movie JOIN Actor on id=mid where ",
+			"cases" : [
+				{
+					"input" : {
+						"id" : 115
+					},
+					"output" : {
+						"cnt" : 0
+					}
+				},
+				{
+					"input" : {
+						"id" : 115
+					},
+					"output" : {
+						"cnt" : 0
+					}
+				},
+				{
+					"input" : {
+						"id" : 115
+					},
+					"output" : {
+						"cnt" : 0
+					}
+				}
+
+			]
+		},
+		testCase3 : {
+			"waitInTime" : 5,
+			"penalty" : 10,
+			"before" : {},
+			"after" : {},
+			"inputQuery" : "select count(*) as cnt from Person JOIN Director on id=pid where ",
+			"cases" : [
+				{
+					"input" : {
+						"id" : 115
+					},
+					"output" : {
+						"cnt" : 0
+					}
+				},
+				{
+					"input" : {
+						"id" : 115
+					},
+					"output" : {
+						"cnt" : 0
+					}
+				},
+				{
+					"input" : {
+						"id" : 115
+					},
+					"output" : {
+						"cnt" : 0
+					}
+				}
+
+			]
+		}
+
+	}
+}

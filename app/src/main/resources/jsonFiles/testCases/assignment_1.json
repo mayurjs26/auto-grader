@@ -1,0 +1,145 @@
+{
+	"tests" : {
+	
+		testCase1 : {
+			"outputFormat" : "database",
+			"waitInTime" : 5,
+			"methodName" : "checkMoviesTable",
+			"penalty" : 10,
+			"before" : {},
+			"after" : {},
+			"inputQuery" : "select id, ptitle, adult, year, runtime, rating, totalVotes from movies where ",
+			"cases" : [
+			{
+				"input" : {
+					"id" : 78748,
+					"adult" : false
+				},
+				"output" : {
+					"id" : 78748,
+					"ptitle" : "Alien",
+					"adult" : false,
+					"year" : 1979,
+					"runtime" : 117,
+					"rating" : 8.4,
+					"totalVotes" : 113998
+				},
+
+			},
+			{
+				"input" : {
+					"id" : 78748
+				},
+				"output" : {
+					"id" : 78748,
+					"ptitle" : "Alien",
+					"adult" : false,
+					"year" : 1979,
+					"runtime" : 117,
+					"rating" : 8.4,
+					"totalVotes" : 113998
+				},
+
+			},
+
+			]
+
+		},
+
+		testCase3 : {
+			
+			"inputFormat" : {
+				"relation" : "",
+				"fds" : [],
+				"cks" : []
+			},
+			"outputFormat" : "file",
+			"outputFilePrefix" : "TNF_",
+			"penalty" : 10,
+			"waitInTime" : 5,
+			"cases" : [
+				{
+					"input" : {
+						"relation" : "r(E,D,C,B,A)",
+						"fds" : "D -> A, B; A, B, C -> D, E;E -> A, C",
+						"cks" : "B, E; C, D; D, E; A, B, C"
+					},
+					"output" : {
+						"expected" : "r(A, B, C, D, E)"
+					}
+					
+				},
+				{
+					"input" : {
+						"relation" : "r(A, B, C)",
+						"fds" : "A -> B;B -> C",
+						"cks" : "A"
+					},
+					"output" : {
+						"expected" : "r(A, B);r(B, C)"
+					}
+					
+				}
+
+			]
+
+		},
+		testCase2 : {  
+
+			"outputFormat" : "file",
+			"inputQuery" : "select m.id AS movieId, m.otitle as title, m.year as year, m.adult as adult, m.runtime as runtime, g.id as genreId, g.name as genre from movie as m join MovieGenre as mg on m.id=mg.id join Genre as g on mg.gid=g.id where m.year between 1999 and 2000 and g.name='Action'",
+			"methodName" : "checkActorsTable",	
+			"penalty" : 10,
+			"waitInTime" : 5,
+			"before" : {},
+			"after" : {},
+			"javaOutputBean" : {
+				"id" : "int",
+				"name" : "str",
+				"byear" : "int",
+			},
+			"javaInputBean" : {
+				"id" : "int"
+			}
+			"cases" : [
+			{
+				"input" : {
+					"id" : 150
+				},
+				"output" : {
+					"id" : 150,
+					"name" : "Michael J. Fox"
+					"byear" : 1961
+				},
+
+			},
+			{
+				"input" : {
+					"id" : 244
+				},
+				"output" : {
+					"id" : 244,
+					"name" : "Sigourney Weaver"
+					"byear" : 1949
+				},
+
+			},
+			{
+				"input" : {
+					"id" : 709
+				},
+				"output" : {
+					"id" : 709,
+					"name" : "Robert Zemeckis"
+					"byear" : 1951
+				},
+
+			}
+			]
+
+		}
+
+
+
+	}
+}

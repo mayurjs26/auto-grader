@@ -1,0 +1,15 @@
+{
+	"database" : "mysql",
+	"user" : "admin",
+	"password": "admin",
+	"host": "localhost",
+	"port": "3306",
+	"databaseName": "poetry_db",
+	"language": "java",
+	"windows": false,
+	"maxSize": 2048,
+	"maxMem" : 32,
+	"projectPath" : "/Users/mayur/CSCI_620/CSCI_620_Assignments/IMDBToSQL/",
+	"gobbler" : true,
+	"args" : ["somefile"]
+}
